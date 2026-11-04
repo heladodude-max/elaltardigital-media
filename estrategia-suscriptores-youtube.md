@@ -25,7 +25,7 @@ El problema de El Altar Digital no es el alcance, es la conversión. En The Unto
 
 ### 1. Arreglar la identidad del canal (hoy, 30 minutos)
 
-- **El handle es `@thepindiecollective`.** No tiene nada que ver con la marca. Alguien que ve un Short y busca "El Altar Digital" no lo encuentra, y en Instagram la cuenta es `@elaltardigital`. Cambiarlo a `@elaltardigital` (o `@lapalabradiaria` si está tomado). Después actualizar el enlace de la bio de Instagram y cualquier link viejo: el handle anterior queda reservado unos 14 días y luego deja de redirigir.
+- ✅ **Handle cambiado** (4 nov 2026): de `@thepindiecollective` a **`@elaltar.digital`** (`@elaltardigital` ya lo usaba otro canal). Falta: actualizar el enlace de la bio de Instagram y cualquier link viejo. El handle anterior todavía redirige, pero deja de hacerlo en unos 14 días.
 - **Descripción del canal con una promesa clara**, en la primera línea: *"Una lectura de la Biblia cada mañana a las 5. Corta, sencilla, para empezar el día con Dios."* La gente se suscribe a una promesa, no a un canal.
 - **Tráiler del canal** para quien no está suscrito: el Short con más suscriptores ganados (no el más visto).
 - **Página principal** con tres secciones: Shorts más vistos, serie Matrimonio, LA PALABRA DIARIA.
@@ -124,7 +124,8 @@ Hay 3,707: 807 renovables que se recargan el 6 de noviembre y 2,900 adicionales 
 ## Calendario
 
 **Semana 1**
-- [ ] Cambiar handle a `@elaltardigital` y actualizar la bio de Instagram
+- [x] Cambiar handle a `@elaltar.digital`
+- [ ] Actualizar el enlace de YouTube en la bio de Instagram
 - [ ] Pantallas finales y videos relacionados de `catalogo/recomendaciones.tsv`, empezando por los videos musicales
 - [ ] Descripción del canal con la promesa, tráiler y secciones de la portada
 - [ ] Nuevo CTA de suscripción en los 3 Shorts diarios
