@@ -62,7 +62,7 @@ Opinión: si después de 4 semanas el largo diario sigue en un dígito y el de b
 
 ### 6. Salir de YouTube
 
-- **Canal de WhatsApp de El Altar Digital.** El público cristiano hispano comparte por WhatsApp más que por cualquier otra red. Cada mañana: el versículo + el link al Short. Gratis.
+- ~~Canal de WhatsApp~~: en pausa por decisión de Roberto (4 nov 2026). Se retoma más adelante.
 - CTA para compartir dentro del Short: *"Mándaselo a alguien que lo necesite hoy."* Un Short compartido llega a gente que se parece al público que ya convierte.
 - Instagram: las stories diarias ya salen. Sumar el sticker de enlace al Short del día en la story del versículo.
 
@@ -129,7 +129,6 @@ Hay 3,707: 807 renovables que se recargan el 6 de noviembre y 2,900 adicionales 
 - [ ] Descripción del canal con la promesa, tráiler y secciones de la portada
 - [ ] Nuevo CTA de suscripción en los 3 Shorts diarios
 - [ ] "Video relacionado" en todos los Shorts nuevos
-- [ ] Crear canal de WhatsApp
 - [ ] Untold Story: retitular los 5 largos con menos vistas con títulos de búsqueda
 
 **Semana 2**
