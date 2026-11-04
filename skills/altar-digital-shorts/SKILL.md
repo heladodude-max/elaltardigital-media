@@ -25,6 +25,15 @@ Los Shorts son el motor del canal: promedian 1,066 vistas contra 5 de los largos
 - Los Shorts son siempre 9:16 (1080x1920). El 16:9 HD aplica solo a largos y miniaturas de largos.
 - Cada semana, medir con vidIQ vistas, retención y suscriptores ganados por Short, y repetir lo que gane.
 
+## Recomendación de otro video (obligatoria desde el 4 nov 2026)
+Base común en youtube-reglas-produccion, sección 6. Los Shorts no tienen pantalla final: el enlace va en "Video relacionado".
+- Cada short invita a ver otro video del canal ya publicado y lo nombra en el audio. Los tres shorts del día recomiendan tres videos distintos.
+- Qué se recomienda: de preferencia un largo del mismo tema o personaje (Biblia por dentro: Pedro _WJizaKi0-8, Judas MIjztwZI1E4; el semanal; un diario de la misma lectura). Si no hay largo que encaje, el short del mismo tema con más vistas (ver `catalogo/el-altar-digital.tsv` del repo elaltardigital-media). Nunca el largo de ese mismo día si aún no es público a las 5:00 am.
+- Orden del cierre: cierre en bucle → CTA propio del short → recomendación (4 a 8 s) → tarjeta final "La Palabra Diaria, todos los días." Ejemplo: "Y si te quedaste pensando en el traidor del grupo, mira lo que hizo Judas después. Te lo dejo aquí abajo."
+- La frase se nombra por el tema, sin dígitos ni fechas, y dice "aquí abajo" (el enlace de Video relacionado sale encima del título en el reproductor de Shorts). Entra en el guion desde el principio y cuenta para las 170 a 260 palabras.
+- Al subir: Studio → el short → Detalles → "Video relacionado" → el recomendado (con Claude in Chrome; la API no lo permite). Comentario fijado con el enlace y una pregunta corta. En la descripción, debajo del enlace al largo del día: "▶ Mira también: <título> <enlace>".
+- estado.json de cada short: `recomendado` (video_id, título, frase) y `video_relacionado` (true/false).
+
 ## Reglas anti-repetición (obligatorias)
 - Un CTA distinto por short dentro del mismo día (por ejemplo: compartir el video, suscribirse, comentar algo concreto, escribir Amén). Nunca el mismo CTA en los tres.
 - Ninguna frase de 4 o más palabras copiada del guion largo ni entre los tres shorts del día. Verificar con una comparación de 4-gramas normalizados (sin tildes ni puntuación) contra el guion largo y entre shorts. Reescribir hasta que no queden coincidencias (salvo citas bíblicas inevitables y muletillas de 4 palabras).
@@ -51,7 +60,7 @@ Generar cuesta dinero. Antes de pedir una imagen nueva, buscar en lo ya generado
 9. Codificar libx264 CRF 19 y mezclar con loudnorm I=-16 TP=-1.5, aac 192k.
 10. Miniatura vertical 1080x1920: 3-4 palabras en amarillo y blanco con contorno negro, etiqueta 'LA PALABRA DIARIA' arriba a la izquierda, imagen distinta si es posible (de la librería antes que generar). OBLIGATORIO: revisarla con el skill youtube-thumbnail-master (anthropic-skills:youtube-thumbnail-master) antes de subirla: correr su thumb_check.py (simulación móvil, squint, escala de grises) y puntuar con su rúbrica (meta 80 o más sobre 100); corregir si baja.
 11. Entrega a la Mac en partes de 24 MB (máximo 100 MB por llamada de commit), unir con cat y probar decodificación con ffmpeg. Subir al chat los tres MP4 y las miniaturas con SendUserFile.
-12. Subir a YouTube: privado con publish_at del día 05:00:00-04:00, categoría 22, descripción con gancho, versículo y enlace al largo del día, hashtags. Después fijar la miniatura (ya aprobada por youtube-thumbnail-master). Guardar guiones y estado.json en la carpeta shorts del día.
+12. Subir a YouTube: privado con publish_at del día 05:00:00-04:00, categoría 22, descripción con gancho, versículo, enlace al largo del día, línea "▶ Mira también" con el recomendado y hashtags. Después fijar la miniatura (ya aprobada por youtube-thumbnail-master) y, en Studio con Claude in Chrome, el "Video relacionado" = el recomendado del audio. Agregar cada short a `catalogo/el-altar-digital.tsv`. Guardar guiones y estado.json en la carpeta shorts del día.
 
 ## Notas operativas
 - Disco del contenedor pequeño: borrar frames tras codificar. No lanzar dos renders del mismo short a la vez (comparten carpeta de frames).

@@ -107,6 +107,8 @@ Además, los criterios propios del canal:
 - Descripción: dos primeras líneas fuertes, bloque "En este video:", línea fija de La Palabra Diaria, invitación a escribir Amén, 3 a 5 hashtags, sin QR ni estadísticas.
 - Tags: unos 15, de general a específico.
 - `publish_at` a las 05:00 de Santo Domingo del día correcto (-04:00), privacidad private, lista "LA PALABRA DIARIA" planificada, sin duplicado del día en `youtube_list_videos`.
+- Recomendación de otro video (youtube-reglas-produccion, sección 6): el guion la trae y nombra un video que ya está público a la hora de salida; sin dígitos. En el largo suena sobre la placa de pantalla final (14 s, no negra, sin subtítulos); en el short, antes de la tarjeta final. Falta la frase o recomienda un video no publicado = BLOQUEADO.
+- Después de subir: pantalla final (largo) con el video nombrado en el audio y el botón de suscribirse, o "Video relacionado" (short) con ese mismo video. Si no se pudo poner, no bloquea la subida, pero queda anotado en estado.json y en el resumen para Roberto.
 
 ## Escalamiento a Roberto
 Solo cuando: el guion no logra consenso tras dos rondas, o un fallo no tiene arreglo automático. El mensaje es corto: qué falló, evidencia, dos opciones.

@@ -20,7 +20,7 @@ Legado descartado: la línea anterior (ensayos documentales sobre CEOs e íconos
 - Voz propia y opinión, ritmo variado (frases de 3–5 palabras junto a otras de 20–30; nunca tres largas ni tres cortas seguidas). Pivote del canal: "And yet." en línea propia.
 - Prohibido: delve, crucial, transformative, moreover, furthermore, additionally, in conclusion, let's face it, "the truth is", "shocking", "insane", "unbelievable", "smash that like button", "hit subscribe", lenguaje de balance "some say X, others Y".
 - Pausas TTS con "..."; etiquetas [halting] máx. 3 y [drawn out] máx. 2 por guion; sin etiquetas de volumen.
-- Cierre: pregunta personal, específica y cómoda de responder en comentarios. El narrador termina ~30 s antes del fade final.
+- Cierre: pregunta personal, específica y cómoda de responder en comentarios. Después, la recomendación de otro video publicado (8 a 15 s, base en youtube-reglas-produccion, sección 6), que coincide con la pantalla final: nombra el video por su título o por la escena que promete y dice dónde está. Ejemplo: "If you want to see what happened when Romans went to the baths... Why Roman Bathhouses Were More Dangerous Than You Think. It's right here on screen." Sin "hit subscribe": la suscripción la pide el elemento de la pantalla final, o una línea con promesa ("Next week you'll spend a night in an Egyptian village. Stay for it."). El narrador termina ~20 s antes del final: esos 20 s son la placa de pantalla final.
 - Descripciones sin spoilers: instalan la pregunta, el video la responde.
 
 ## Voz
@@ -57,8 +57,9 @@ Generar cuesta dinero. Antes de pedir cualquier imagen nueva (escena de largo, e
 - Gancho de texto enorme en 0–2,8 s (3–6 palabras, dorado con contorno negro); la voz arranca en el segundo 0, sin intro ni logo.
 - Subtítulos quemados palabra a palabra (Poppins Bold ~96 px, 3 palabras por bloque, palabra activa en dorado) en el tercio medio-bajo, lejos de la interfaz de Shorts; nunca dos bloques solapados.
 - Cortes de imagen cada ~4–5 s con zoom ≥1.10 alternando in/out (oculta bordes). Sin música obligatoria.
-- Final: imagen oscurecida + tarjeta "FULL STORY ON THE CHANNEL / título del largo" + CTA hablado en Achird ("The full story is on the channel. Link in the description."). Terminar en frase que deje promesa o pregunta.
+- Final: imagen oscurecida + tarjeta "FULL STORY ON THE CHANNEL / título del largo" + CTA hablado en Achird que nombra el largo y dice dónde está: "The full story of that night is right below." (el enlace de "Video relacionado" sale encima del título en el reproductor de Shorts). Terminar en frase que deje promesa o pregunta.
 - Descripción: línea gancho, link al largo, 3–5 hashtags (#AncientRome #History #Shorts). Comentario fijado con el link. Título corto con palabra clave y curiosidad.
+- "Video relacionado" en Studio (Detalles) = el largo que nombra el CTA. Obligatorio en todo Short (con Claude in Chrome o Roberto; la API no lo permite).
 - Ritmo: ~3 por semana, escalonados. Medir retención a 3 s y % visto; replicar los que pasen del 85 %.
 - Cortes del Piloto 1: S1 ventanas/Juvenal (p1_03 24.60–45.90), S2 gancho (p1_00 0–28.06 + 51.44–61.05), S3 antorchas (p1_01 52.48–73.80 + 75.30–86.25), S4 incendio (p1_03b 41.80–62.40 + 69.10–76.15), S5 Marcus (p1_04 74.30–109.65). Script de armado: ~/work/shbuild.py (audio/segs/ass/final).
 
@@ -67,6 +68,8 @@ Generar cuesta dinero. Antes de pedir cualquier imagen nueva (escena de largo, e
 2. Título, descripción, tags, miniatura (ya revisada con youtube-thumbnail-master), idioma del video = English (se resetea tras publicar: verificar), divulgación de IA = Yes, no para niños.
 3. Claude in Chrome no lee videos grandes (límite 10 MB y permisos): Roberto arrastra el archivo; las miniaturas sí suben con file_upload. El MCP de YouTube pide reautorizar si da invalid_grant.
 4. Nunca publicar en público sin que Roberto lo diga explícitamente en el chat.
+5. Pantalla final en todo largo (YouTube Studio → Editor → Pantalla final): placa de los últimos 20 s (la última escena oscurecida, sin texto, con el video a la izquierda y el botón de suscribirse a la derecha libres), elemento Video = el mismo que nombra el audio y elemento Suscribirse. Del segundo video en adelante, "Importar desde video" y cambiar solo el video. Comprobar en la vista previa. En Shorts, "Video relacionado" (ver Shorts).
+6. Agregar el video a `catalogo/the-untold-story.tsv` del repo elaltardigital-media.
 
 ## Preferencias de trabajo con Roberto
 Español, conciso. Subir al chat todo entregable (videos, imágenes, miniaturas, archivos) con SendUserFile, siempre, sin que lo pida. Una pregunta a la vez. No enviar mensajes en su nombre sin que lea el texto exacto.

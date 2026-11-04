@@ -54,3 +54,40 @@ Todo video largo lleva capítulos: una lista de tiempos en la descripción, un t
 - Títulos de 2 a 5 palabras, en el idioma del video, que den curiosidad sin spoilers: instalan la pregunta, el video la responde.
 - Van en la descripción debajo de las dos primeras líneas, que siguen siendo el gancho. Después de subir, mirar en YouTube Studio que los reconoció (se ven como segmentos en la barra de reproducción).
 - Excepciones: en El Altar Digital no se agregan hasta que Roberto confirme que los tiempos son una excepción a su regla "sin cifras". En Corazones en Penumbra y Metamorfisis solo si Roberto lo pide, porque los títulos de capítulo adelantarían la trama.
+## 6. Cierre: invitar a otro video ya publicado y fijar la pantalla final (obligatoria desde el 4 de noviembre de 2026)
+Todo video de los canales de Roberto, largo o Short, termina invitando a ver otro video del canal que ya esté publicado, y lo nombra en el audio. Los largos llevan además pantalla final con dos elementos: el video recomendado y el botón de suscribirse al canal. Los Shorts no admiten pantalla final: su equivalente es el campo "Video relacionado". Cada skill de canal dice cómo se aplica en su formato; esta sección es la base común.
+
+### Catálogo de videos publicados
+- Cada canal tiene `catalogo/<canal>.tsv` en el repo elaltardigital-media (video_id, tipo, duración, fecha, vistas, título, tema). Se actualiza con el video_id y el título de cada subida (sale de estado.json, sin coste). Solo si hace falta refrescar las vistas: una llamada a `vidiq_user_videos` por canal, como mucho una vez por semana (5 créditos).
+- El mapa de recomendaciones de los videos ya publicados está en `catalogo/recomendaciones.tsv`.
+
+### Elegir el video recomendado
+1. Tiene que estar público cuando salga el video nuevo. Nunca recomendar uno programado para la misma hora o más tarde.
+2. Prioridad: la siguiente parte de la serie si ya salió → la parte anterior o el primer capítulo de la serie → un video del mismo tema o del mismo personaje → el video del canal que más suscriptores gana (columna Suscriptores en Studio).
+3. Desde un Short se recomienda de preferencia un largo del mismo tema (así el Short empuja a mirar más tiempo). Si no hay un largo que encaje, el Short del mismo tema con más vistas.
+4. Nunca el mismo video, ni un video que no tenga nada que ver solo porque tiene vistas. En un mismo día, cada video recomienda uno distinto. Un mismo video no se recomienda en más de tres subidas por semana.
+5. Se anota en estado.json: `recomendado` con video_id, título, motivo y la frase dicha en el audio.
+
+### La frase en el audio
+- Una o dos frases, de 4 a 8 segundos en un Short y de 8 a 15 en un largo. Va después del último giro y de la invitación propia del video, y antes del cierre de marca. Nunca antes del pago del gancho.
+- Nombra el video por su título o por una paráfrasis que se reconozca al verlo ("el de Pedro la noche que lo negó"), dice qué va a encontrar la persona (una promesa, no un resumen) y dónde está: "aquí en pantalla" en un largo, "aquí abajo" en un Short.
+- Suena como invitación de alguien que conoce el video, no como anuncio: "Si te quedaste pensando en Judas, mira lo que hizo Pedro esa misma noche. Te lo dejo aquí en pantalla." Nada de "no olvides", "dale clic", "smash".
+- Respeta las reglas de cada canal: sin dígitos ni cifras en El Altar Digital (si el título lleva una fecha, se nombra por su tema), inglés y sin "hit subscribe" en The Untold Story, voz del personaje en Titi Mari.
+- La frase entra en el guion desde el principio y pasa la misma revisión que el resto (puerta de viralidad, ChatGPT, QA). No se pega al final después de grabar.
+
+### Pantalla final en los largos
+- Duración: los últimos 15 a 20 segundos (YouTube permite de 5 a 20, y solo en videos de 25 segundos o más). El montaje deja ese tramo libre: una placa de cierre sin texto ni logo grande en las zonas donde caen los elementos (en 16:9: el video recomendado a la izquierda del centro, unos 40 % del ancho; el botón de suscribirse a la derecha). La frase de la recomendación suena cuando aparecen los elementos.
+- Elementos, siempre los dos:
+  1. **Video**: "Elegir un video específico" = el mismo que se nombra en el audio. Si el audio y la pantalla no coinciden, se corrige antes de publicar.
+  2. **Suscribirse**: el logo del canal (es el enlace al canal y a la suscripción).
+  Opcional, tercer elemento: la lista de la serie.
+- Cómo se pone (la API de YouTube no maneja pantallas finales): YouTube Studio → Contenido → el video → Editor → Pantalla final. Con Claude in Chrome en la Mac, o Roberto a mano. El primer video de cada canal se arma a mano; los siguientes usan "Importar desde video" para copiar la plantilla y solo se cambia el video específico. Si el editor todavía no está disponible porque el video se sigue procesando, se hace en cuanto termine y siempre antes de la hora de publicación.
+- Comprobar: abrir el video en Studio y mirar en la vista previa del Editor que salen los dos elementos y que el video recomendado es el correcto. Anotar `pantalla_final: true` en estado.json. Si no se pudo (Chrome sin sesión, editor caído), se anota en estado.json y en el resumen para Roberto; el video no queda como terminado.
+
+### "Video relacionado" en los Shorts
+- En Studio: el Short → Detalles → "Video relacionado" → el recomendado. Es el enlace que aparece encima del título en el reproductor de Shorts, por eso el audio dice "aquí abajo". También se hace con Claude in Chrome; la API no lo permite.
+- Comentario fijado con el enlace al recomendado y una pregunta corta.
+- Anotar `video_relacionado: true` en estado.json.
+
+### Videos ya publicados
+Los videos que salieron antes de esta regla no tienen la frase en el audio, pero sí se les pone pantalla final (largos) y video relacionado (Shorts) según `catalogo/recomendaciones.tsv`. En los largos viejos la pantalla final va sobre los últimos segundos que haya (mínimo 5 s), aunque tape parte del cierre.

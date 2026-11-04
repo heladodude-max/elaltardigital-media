@@ -181,3 +181,12 @@ Añadir al prompt de imagen: movimiento de cámara, duración, línea de sonido 
 
 ## Orden de publicación recomendado
 Ep4, Ep2, Ep3, Ep5, Ep1.
+
+## Cierre: siguiente video y pantalla final (obligatoria desde el 4 nov 2026)
+Base común en youtube-reglas-produccion, sección 6.
+- Cada capítulo termina con una voz en off breve (8 a 12 s, después de la última escena y antes de los créditos) que invita a ver otro video ya publicado y lo nombra. Orden de preferencia: el capítulo siguiente si ya está publicado; si no, el anterior o el primero de Metamorfisis; en el último capítulo, otra serie o el video del canal que más suscriptores gana. Ejemplo: "Hay otra historia real esperándote. Está aquí, en pantalla." Se escribe en el guion y pasa la misma revisión; nunca se agrega después.
+- La voz no es la de un personaje (rompería la ficción): narrador neutro, cálido, con la misma voz en toda la serie.
+- Los últimos 20 s son la placa de pantalla final: plano final congelado o créditos, oscurecido, sin texto en la zona izquierda (video recomendado) ni en la derecha (botón de suscribirse).
+- En YouTube Studio → Editor → Pantalla final: Video = el que nombra la voz en off; Suscribirse; opcional, la lista de la serie. En los capítulos que salen juntos (1 y 2), el 1 apunta al 2.
+- Si hay Shorts promocionales de la serie, su "Video relacionado" es el capítulo del que salen.
+
